@@ -1,0 +1,24 @@
+.side-element.right {
+    left: auto;
+    right: 40px;
+}
+
+.email-link {
+    writing-mode: vertical-rl;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    letter-spacing: 0.1em;
+}
+
+.email-link:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1080px) {
+    .side-element.right {
+        display: none;
+    }
+}
