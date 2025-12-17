@@ -29,7 +29,7 @@ const Projects = () => {
             outcome: 'Deployed full-stack application with responsive design and efficient API integration.',
             tech: ['TypeScript', 'React', 'Next.js', 'OpenAI API'],
             github: 'https://github.com/adithyagurikani/lawmate-voice-ai',
-            live: '#'
+            live: 'https://adithyagurikani.github.io/lawmate-voice-ai/' // Update with actual URL
         },
         {
             title: 'ANPR System',
@@ -49,7 +49,7 @@ const Projects = () => {
             outcome: 'Production-ready application with responsive design and scalable architecture.',
             tech: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
             github: 'https://github.com/adithyagurikani/cloud-expense-tracker',
-            live: '#'
+            live: 'https://adithyagurikani.github.io/cloud-expense-tracker/' // Update with actual URL
         }
     ];
 
@@ -75,16 +75,36 @@ const Projects = () => {
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
                             variants={fadeIn}
+                            onClick={() => {
+                                if (project.live && project.live !== '#') {
+                                    window.open(project.live, '_blank', 'noopener,noreferrer');
+                                }
+                            }}
+                            style={{ cursor: project.live && project.live !== '#' ? 'pointer' : 'default' }}
                         >
                             <div className="project-header">
                                 <h3 className="project-title link-underline">{project.title}</h3>
                                 <div className="project-links">
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-link"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
                                         <Github size={18} />
                                     </a>
-                                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
-                                        <ExternalLink size={18} />
-                                    </a>
+                                    {project.live && project.live !== '#' && (
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-link"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <ExternalLink size={18} />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
 
