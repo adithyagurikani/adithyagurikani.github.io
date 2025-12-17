@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Portfolio
 
 A modern, elegant portfolio website built with React, Vite, and Framer Motion.
@@ -166,3 +167,6 @@ MIT License - feel free to use this for your own portfolio!
 ## Credits
 
 Inspired by [Brittany Chiang's portfolio](https://brittanychiang.com/)
+=======
+# adithyagurikani.github.io
+>>>>>>> d068072c6c48262c8b722071410a0762af0b9ed0
