@@ -1,59 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="agGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e87d2f;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#d64a7b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a855c8;stop-opacity:1" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a6b3c"/>
+      <stop offset="100%" stop-color="#155730"/>
     </linearGradient>
-    <!-- Brush texture filter for grunge/hand-painted look -->
-    <filter id="brushTexture" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="2" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="roughEdge" x="-10%" y="-10%" width="120%" height="120%">
-      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="5" seed="15" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.15)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
   </defs>
-  
-  <rect width="500" height="300" fill="#000000"/>
-  
-  <g filter="url(#brushTexture)">
-    <!-- Letter A -->
-    <g fill="url(#agGrad)">
-      <!-- Main A shape - brush stroke style -->
-      <!-- Left leg of A -->
-      <polygon points="120,230 145,230 185,75 165,70" />
-      <!-- Right leg of A -->
-      <polygon points="195,230 220,230 190,80 170,75" />
-      <!-- Crossbar of A -->
-      <rect x="138" y="160" width="65" height="18" rx="2" transform="rotate(-2, 170, 169)"/>
-      
-      <!-- Brush drip effects for A -->
-      <rect x="118" y="228" width="8" height="18" rx="3" opacity="0.7"/>
-      <rect x="210" y="225" width="6" height="22" rx="3" opacity="0.6"/>
-      <rect x="125" y="226" width="5" height="12" rx="2" opacity="0.5"/>
-    </g>
-    
-    <!-- Letter G -->
-    <g fill="url(#agGrad)">
-      <!-- Main G curve - approximated with paths -->
-      <path d="M310,95 C275,80 250,100 248,145 C246,190 265,230 310,235 C345,238 365,218 370,195 L370,165 L325,165 L325,183 L348,183 L348,198 C345,212 332,220 312,218 C285,215 272,190 274,148 C276,110 292,98 312,100 C330,102 342,112 348,125 L372,115 C362,95 342,82 310,95 Z" />
-      
-      <!-- Brush drip effects for G -->
-      <rect x="270" y="230" width="7" height="20" rx="3" opacity="0.6"/>
-      <rect x="355" y="228" width="6" height="15" rx="3" opacity="0.5"/>
-      <rect x="285" y="232" width="5" height="14" rx="2" opacity="0.4"/>
-    </g>
-  </g>
-  
-  <!-- Additional brush splatter marks -->
-  <g fill="url(#agGrad)" opacity="0.3" filter="url(#roughEdge)">
-    <circle cx="135" cy="245" r="3"/>
-    <circle cx="225" cy="240" r="2.5"/>
-    <circle cx="265" cy="242" r="2"/>
-    <circle cx="375" cy="245" r="3"/>
-    <rect x="160" y="68" width="15" height="4" rx="2" transform="rotate(-15, 167, 70)"/>
-    <rect x="348" y="88" width="12" height="3" rx="1.5" transform="rotate(10, 354, 89)"/>
-  </g>
+  <!-- Rounded square background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- Subtle shine overlay -->
+  <rect width="64" height="64" rx="14" fill="url(#shine)"/>
+  <!-- Letter A - elegant serif style -->
+  <text x="32" y="46" 
+    font-family="Georgia, 'Playfair Display', serif" 
+    font-weight="700" 
+    font-size="38" 
+    fill="#ffffff" 
+    text-anchor="middle" 
+    letter-spacing="-2">AG</text>
+  <!-- Subtle accent dot -->
+  <circle cx="52" cy="16" r="3" fill="#86e8b0" opacity="0.9"/>
 </svg>
